@@ -5,7 +5,7 @@ function sendLineNotify(messageText) {
     "method" : "post",
     "headers" : { "Authorization" : "Bearer " + token },
     "payload" : {
-      "message" : '\n' + messageText
+      "message" : messageText
     }
   }
   UrlFetchApp.fetch("https://notify-api.line.me/api/notify", options)
