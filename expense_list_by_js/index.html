@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>自製記帳表單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css' />
+    <base target="_top">
+    <?!= include('style.css'); ?>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <h1 class="text-primary text-center">自製記帳表單</h1>
+                <h2 class="text-primary text-center">這次消費</h2>
+                <form action="#" class="login-form mt-2" method="post" id="form">
+                    <div class="form-group">
+                        <label for="date">日期</label>
+                        <input type="text" class="form-username form-control" placeholder="購買日期" name="date" id="buy-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">金額</label>
+                        <input type="text" class="form-password form-control" placeholder="請輸入金額" name="amount" id="amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">種類</label>
+                        <input type="text2" class="form-password form-control" placeholder="請輸入種類" name="category" id="category">
+                    </div>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<?!= include('main.js'); ?>
+</html>

@@ -1,0 +1,18 @@
+<script>
+  $(document).ready(function(){
+    $("#buy-date").datepicker()
+  })
+  $("#form").submit(function( event ) {
+    event.preventDefault();
+    addRecord()
+  });
+  function addRecord(){
+    let date = document.getElementById('buy-date').value
+    let amount= document.getElementById('amount').value
+    let category= document.getElementById('category').value
+    google.script.run.addRecord(date, amount, category)
+    document.getElementById('buy-date').value = ''
+    document.getElementById('amount').value = ''
+    document.getElementById('category').value = ''
+  }
+</script>
