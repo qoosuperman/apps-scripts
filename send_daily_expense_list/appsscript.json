@@ -1,0 +1,15 @@
+{
+  "timeZone": "Asia/Taipei",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "SendLineNotify",
+        "version": "0",
+        "libraryId": "1s-9rxb53itvI_uzdcClKhlc3OFfptVt6OwLwecYdRmBDJr_1sMQ3m56K",
+        "developmentMode": true
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
