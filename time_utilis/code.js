@@ -12,3 +12,7 @@ function getAbsoluteDateHour(dateTimeString) {
   var date = new Date(Date.parse(dateTimeString))
   return date
 }
+
+function dateToMonthString(date){
+  return Utilities.formatDate(date, 'GMT+8', 'yyyy-MM')
+}
