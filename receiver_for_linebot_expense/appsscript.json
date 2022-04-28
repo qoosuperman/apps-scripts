@@ -1,6 +1,15 @@
 {
   "timeZone": "America/New_York",
-  "dependencies": {},
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "DriveUtilis",
+        "version": "0",
+        "libraryId": "1KLor4BrTpsE4InlDBpxFr1Zi51F9N_oGR2aalF6MdvHpQyjSBQsDlXdw",
+        "developmentMode": true
+      }
+    ]
+  },
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "webapp": {
