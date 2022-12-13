@@ -1,8 +1,8 @@
-var userProperty = PropertiesService.getUserProperties();
+var userProperty = PropertiesService.getUserProperties()
+// userProperty.setProperty('lineNotifyToken','<your line notify token>')
+var token = userProperty.getProperty('lineNotifyToken')
 
 function sendLineNotify(messageText) {
-  // userProperty.setProperty('lineNotifyToken','<your line notify token>')
-  var token = userProperty.getProperty('lineNotifyToken')
   var options = {
     "method" : "post",
     "headers" : { "Authorization" : "Bearer " + token },
@@ -24,4 +24,23 @@ function pickEmoticon() {
   let lastRow = sheet.getLastRow()
   let emoticons = sheet.getRange(1, 1, lastRow).getValues().flat()
   return emoticons.sample()
+}
+
+function sendTextAndImage(text, blob) {
+  var boundary = "cutHere";
+  var requestBody = Utilities.newBlob(
+    "--" + boundary + "\r\n"
+    + "Content-Disposition: form-data; name=\"message\"; \r\n\r\n" + text + "\r\n"
+    + "--" + boundary + "\r\n"
+    + "Content-Disposition: form-data; name=\"imageFile\"; filename=\"" + blob.getName() + "\"\r\n"
+    + "Content-Type: " + "image/png" +"\r\n\r\n").getBytes();
+  requestBody = requestBody.concat(blob.getBytes());
+  requestBody = requestBody.concat(Utilities.newBlob("\r\n--" + boundary + "--\r\n").getBytes());
+  var options = {
+    "method" : "post",
+    "headers" : { "Authorization" : "Bearer " + token },
+    "contentType" : "multipart/form-data; boundary=" + boundary,
+    "payload" : requestBody
+  }
+  UrlFetchApp.fetch("https://notify-api.line.me/api/notify", options)
 }
