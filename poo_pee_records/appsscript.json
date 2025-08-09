@@ -1,0 +1,15 @@
+{
+  "timeZone": "Asia/Taipei",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "TimeUtilis",
+        "version": "0",
+        "libraryId": "1tQGcMHVcLCLDAoQY2zWMISB65WqnvNDvSrrMIj1ENxX6TrTzVzlx4qDU",
+        "developmentMode": true
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
